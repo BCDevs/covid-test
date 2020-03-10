@@ -40,14 +40,14 @@ footer {
     $('#display').scrollTop($('#log').prop('scrollHeight'));
   }
 let name = prompt("Please Enter Your Name..")
-let age = prompt("Your Age..")
-let fever = prompt("Do you have fever symptoms? (0= no, 1= yes):")
-let cough = prompt("Do you have cough symptoms? (0= no, 1= yes):")
-let sob = prompt("Do you have Shortness of Breath symptoms? (0= no, 1= yes):")
-let sore = prompt("Do you have Sore throat or runny nose symptoms? (0= no, 1= yes):")
-let vomit = prompt("Do you have vomitting symptoms? (0= no, 1= yes):")
-let ill = prompt("Do you have Diabetes, kidney, or heart diseases? (0= no, 1= yes):")
-let epi = prompt("Have you been in epidemic region, or in contact with person from that region in last 14 days? (0= no, 1= yes):")
+let age = Number(prompt("Your Age.."))
+let fever = Number(prompt("Do you have fever symptoms? (0= no, 1= yes):"))
+let cough = Number(prompt("Do you have cough symptoms? (0= no, 1= yes):"))
+let sob = Number(prompt("Do you have Shortness of Breath symptoms? (0= no, 1= yes):"))
+let sore = Number(prompt("Do you have Sore throat or runny nose symptoms? (0= no, 1= yes):"))
+let vomit = Number(prompt("Do you have vomitting symptoms? (0= no, 1= yes):"))
+let ill = Number(prompt("Do you have Diabetes, kidney, or heart diseases? (0= no, 1= yes):"))
+let epi = Number(prompt("Have you been in epidemic region, or in contact with person from that region in last 14 days? (0= no, 1= yes):"))
 
 let risk = fever*2 + cough*2 + sob*2 + sore + vomit + ill
 
