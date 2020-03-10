@@ -43,7 +43,6 @@ let risk = fever*2 + cough*2 + sob*2 + sore + vomit + ill
 
 log(`Name: ${name}`)
 log(`Age: ${age}`)
-log(`Name: ${name}`)
 if(fever==1){
 log(`Fever: Yes`)
 }if(fever==0){
@@ -82,9 +81,8 @@ log(`Lived in Epidemic Region: No`)
 if (epi ==0){
     if (risk > 4){ 
 
-       result("You don't have high risk of COVID 19, it's probably flu,")
+       result("You don't have high risk of COVID-19, it's probably flu")
   }else{
-
 if (1<age<41){let rate = "0.2";}
 if (40<age<51){let rate = "0.4";}
 if (50<age<61){ let rate = '1.3'}
@@ -92,7 +90,7 @@ if (60<age<71) {let rate = "3.6"}
 if (70<age<81) {let rate = '8'}
 if (80<age){let rate = '14.8'}
   result(`You have a bit risk of COVID 19 infection.
-  "According to your age, if you have infected, the fatality rate is:', ${rate}%`)
+  "According to your age, if you have infected, the fatality rate is: ${rate}%`)
     }
   }
 if (epi ==1){
