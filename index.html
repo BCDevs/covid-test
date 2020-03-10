@@ -93,12 +93,12 @@ if (epi ==0){
 
        result("You don't have high risk of COVID-19, it's probably flu")
   }else{
-if (1<age<41){var rate = "0.2";}
-if (40<age<51){var rate = "0.4";}
-if (50<age<61){ var rate = '1.3'}
-if (60<age<71) {var rate = "3.6"}
-if (70<age<81) {var rate = '8'}
-if (80<age){var rate = '14.8'}
+if (1<Number(age)<41){var rate = "0.2";}
+if (40<Number(age)<51){var rate = "0.4";}
+if (50<Number(age)<61){ var rate = '1.3'}
+if (60<Number(age)<71) {var rate = "3.6"}
+if (70<Number(age)<81) {var rate = '8'}
+if (80<Number(age)){var rate = '14.8'}
   result(`You have a bit risk of COVID 19 infection.
   "According to your age, if you have infected, the fatality rate is: ${rate}%`)
     }
