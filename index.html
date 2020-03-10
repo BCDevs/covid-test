@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<meta charset="UTF-8">
+<title>Covid-19 Test</title>
+<style>
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+<div style="text-align:center;">
+<h4>Covid-19 Test</h4>
+</br>
+<span id="log"></span><br>
+<span id="display"></span><br>
+</div>
+<script>
+  function log(message) {
+    $('#log').append($('<p>').addClass('dark-red').text(message));
+    $('#log').scrollTop($('#log').prop('scrollHeight'));
+  }
+  function result(message) {
+    $('#display').append($('<p>').addClass('dark-red').text(message));
+    $('#display').scrollTop($('#log').prop('scrollHeight'));
+  }
+let name = prompt("Please Enter Your Name..")
+let age = prompt("Your Age..")
+let fever = prompt("Do you have fever symptoms? (0= no, 1= yes):")
+let cough = prompt("Do you have cough symptoms? (0= no, 1= yes):")
+let sob = prompt("Do you have Shortness of Breath symptoms? (0= no, 1= yes):")
+let sore = prompt("Do you have Sore throat or runny nose symptoms? (0= no, 1= yes):")
+let vomit = prompt("Do you have vomitting symptoms? (0= no, 1= yes):")
+let ill = prompt("Do you have Diabetes, kidney, or heart diseases? (0= no, 1= yes):")
+let epi = prompt("Have you been in epidemic region, or in contact with person from that region in last 14 days? (0= no, 1= yes):")
+
+let risk = fever*2 + cough*2 + sob*2 + sore + vomit + ill
+
+log(`Name: ${name}`)
+log(`Age: ${age}`)
+log(`Name: ${name}`)
+if(fever==1){
+log(`Fever: Yes`)
+}if(fever==0){
+log(`Fever: No`)
+}
+if(cough==1){
+log(`Cough: Yes`)
+}if(cough==0){
+log(`Cough: No`)
+}
+if(sob==1){
+log(`Breathe Shortness: Yes`)
+}if(sob==0){
+log(`Breathe Shortness: No`)
+}
+if(sore==1){
+log(`Sore Throat or Runny Nose: Yes`)
+}if(sore==0){
+log(`Sore Throat or Runny Nose: No`)
+}
+if(vomit==1){
+log(`Vomittings: Yes`)
+}if(vomit==0){
+log(`Vomittings: No`)
+}
+if(ill==1){
+log(`Other Illness: Yes`)
+}if(ill==0){
+log(`Other Illness: No`)
+}
+if(epi==1){
+log(`Lived in Epidemic Region: Yes`)
+}if(epi==0){
+log(`Lived in Epidemic Region: No`)
+}
+if (epi ==0){
+    if (risk > 4){ 
+
+       result("You don't have high risk of COVID 19, it's probably flu,")
+  }else{
+
+if (1<age<41){let rate = "0.2";}
+if (40<age<51){let rate = "0.4";}
+if (50<age<61){ let rate = '1.3'}
+if (60<age<71) {let rate = "3.6"}
+if (70<age<81) {let rate = '8'}
+if (80<age){let rate = '14.8'}
+  result(`You have a bit risk of COVID 19 infection.
+  "According to your age, if you have infected, the fatality rate is:', ${rate}%`)
+    }
+  }
+if (epi ==1){
+    if (risk > 4){ result('You have risk of infection, you should wear surgical mask and be isolated until make the test')
+  }else{
+   result("You don't have COVID 19 sign, but may you have risk because of epidemic region")
+      }
+ }
+
+</script>
+</body>
+</html>
